@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TriangleCalculator"
         mc:Ignorable="d"
-        Title="Triangle Calculator" Height="450" Width="350">
+        Title="Triangle Calculator" Height="250" Width="350">
     <Grid>
         <StackPanel Margin="5" Orientation="Vertical">
             <Grid>
@@ -19,13 +19,17 @@
                     <RowDefinition Height="1*" />
                 </Grid.RowDefinitions>
                 <Label Margin="1" Content="Side a length:"/>
-                <TextBox x:Name="side_A" Margin="1" Grid.Column="1" MinWidth="150" MinHeight="20" MaxWidth="500" />
+                <TextBox Text="{Binding SideA, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="NumberValidation"
+                                x:Name="side_A" Margin="1" Grid.Column="1" MinWidth="150" MinHeight="20" MaxWidth="500" />
                 <Label Margin="1" Grid.Row="1" Content="Side b length:"/>
-                <TextBox x:Name="side_B" Margin="1" Grid.Column="1" Grid.Row="1" MinWidth="150" MinHeight="20" MaxWidth="500" />
+                <TextBox Text="{Binding SideB, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="NumberValidation" 
+                                x:Name="side_B" Margin="1" Grid.Column="1" Grid.Row="1" MinWidth="150" MinHeight="20" MaxWidth="500" />
                 <Label Margin="1" Grid.Row="2" Content="Side c length:"/>
-                <TextBox x:Name="side_C" Margin="1" Grid.Column="1" Grid.Row="2" MinWidth="150" MinHeight="20" MaxWidth="500" />
+                <TextBox Text="{Binding SideC, UpdateSourceTrigger=PropertyChanged}" PreviewTextInput="NumberValidation" 
+                                x:Name="side_C" Margin="1" Grid.Column="1" Grid.Row="2" MinWidth="150" MinHeight="20" MaxWidth="500" />
             </Grid>
-            <TextBlock Margin="5">Placeholder Text</TextBlock>
+            <TextBlock Text="{Binding Result, UpdateSourceTrigger=PropertyChanged}" Name="result" Margin="7" xml:space="preserve"/>
         </StackPanel>
+
     </Grid>
 </Window>
